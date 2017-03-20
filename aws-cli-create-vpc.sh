@@ -1,5 +1,4 @@
 #!/bin/bash
-#
 #******************************************************************************
 #    AWS VPC Creation Shell Script
 #******************************************************************************
@@ -16,12 +15,13 @@
 #==============================================================================
 #
 # NOTES
-#    VERSION:   0.1
-#    LASTEDIT:  02/25/2017
-#    AUTHOR:    Joe Arauzo
-#    EMAIL:     joe@arauzo.net
-#    REVISIONS:
-#        0.1  02/25/2017 - initial script
+#   VERSION:   0.1.0
+#   LASTEDIT:  03/18/2017
+#   AUTHOR:    Joe Arauzo
+#   EMAIL:     joe@arauzo.net
+#   REVISIONS:
+#       0.1.0  03/18/2017 - first release
+#       0.0.1  02/25/2017 - work in progress
 #
 #==============================================================================
 #   MODIFY THE SETTINGS BELOW

@@ -55,7 +55,7 @@ The AWS CLI will prompt you for four pieces of information. AWS Access Key ID an
 You can either [clone this repository](https://help.github.com/articles/cloning-a-repository/) or you can download just this script to your workstation.
 
 ```sh
-$ curl -sL https://raw.githubusercontent.com/kovarus/aws-cli-create-vpcs/master/aws-cli-create-vpc.sh
+$ curl -sL https://raw.githubusercontent.com/kovarus/aws-cli-create-vpcs/master/aws-cli-create-vpc.sh > aws-cli-create-vpc.sh
 ```
 
 > The GitHub repository must be public for the preceding command to work.

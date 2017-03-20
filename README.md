@@ -165,14 +165,15 @@ When creating a custom VPC, there are several tasks which must be performed.  Th
 3. Create a Private Subnet
     - Add a tag to name the Private Subnet
 4. Create an Internet Gateway
-5. Attach the Internet Gateway to the VPC
-6. Create a new Route Table
-7. Add a route to the Internet Gateway to the new Route Table
-8. Associate the Public Subnet with the new Route Table
-9. Enable the _Auto-assign Public IP_ setting on the Public Subnet
-10. Allocate an Elastic IP Address for the NAT Gateway
-11. Create a NAT Gateway and **wait** for it to become available
-12. Add a route to the NAT Gateway to the _Main_ Route Table
+    - Attach the Internet Gateway to the VPC
+5. Create a new Route Table
+    - Add a route to the Internet Gateway to the new Route Table
+    - Associate the Public Subnet with the new Route Table
+    - Enable the _Auto-assign Public IP_ setting on the Public Subnet
+6. Configure the Private Subnet with a NAT Gateway
+    - Allocate an Elastic IP Address for the NAT Gateway
+    - Create a NAT Gateway and **wait** for it to become available
+    - Add a route to the NAT Gateway to the _Main_ Route Table
 
 ## Versioning
 

@@ -8,8 +8,8 @@
 #    private subnet, and a NAT gateway.
 #
 # DESCRIPTION
-#    This shell script leverages the AWS Command Line Interface (awscli) to
-#    automatically create a custom VPC.  The script assumes the awscli is
+#    This shell script leverages the AWS Command Line Interface (AWS CLI) to
+#    automatically create a custom VPC.  The script assumes the AWS CLI is
 #    installed and configured with the necessary security credentials.
 #
 #==============================================================================

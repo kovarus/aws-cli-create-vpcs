@@ -52,7 +52,7 @@ The AWS CLI will prompt you for four pieces of information. AWS Access Key ID an
 
 ### Installation
 
-You can either [clone this repository](https://help.github.com/articles/cloning-a-repository/) or download just the script to your workstation.
+You can either [clone this repository](https://help.github.com/articles/cloning-a-repository/) or you can download just this script to your workstation.
 
 ```sh
 $ curl -sL https://raw.githubusercontent.com/kovarus/aws-cli-create-vpcs/master/aws-cli-create-vpc.sh
@@ -63,7 +63,7 @@ $ curl -sL https://raw.githubusercontent.com/kovarus/aws-cli-create-vpcs/master/
 
 ### Configuration
 
-The script is configured by setting a set of variables within the script.
+The script is configured by setting variables within the script.
 
 ```sh
 #==============================================================================
@@ -82,10 +82,10 @@ SUBNET_PRIVATE_NAME="10.0.2.0 - us-west-1b"
 CHECK_FREQUENCY=5
 ```
 
-The variables are predefined with common values which work out of the box.  Feel free to modify them as follows.
+The variables are predefined with common values which work out-of-the-box.  Feel free to modify them as follows.
 
 1. Set `AWS_REGION` to the AWS region you wish to create your VPC in.  You can find a [list of AWS regions here](http://docs.aws.amazon.com/general/latest/gr/rande.html#vpc_region).  The list of available regions can change as AWS becomes available in new locations.  A more programmatic method for obtaining a list of available AWS regions would to use the the AWS CLI itself.
-    ```
+    ```sh
     $ aws ec2 describe-regions --output text
     REGIONS	ec2.ap-south-1.amazonaws.com	ap-south-1
     REGIONS	ec2.eu-west-2.amazonaws.com	eu-west-2
@@ -106,12 +106,12 @@ The variables are predefined with common values which work out of the box.  Feel
 3. Set `VPC_CIDR` to a single CIDR block sized between a `/16` netmask and `/28` netmask.  See [VPC and Subnet Sizing](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing) for more information.
 4. Set `SUBNET_PUBLIC_CIDR` to a valid CIDR block for the VPC CIDR block you specified in the preceding step.  See [VPC and Subnet Sizing](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing) for more information.  EC2 instances deployed into this subnet will be accessible from the Internet.
 5. Set `SUBNET_PUBLIC_AZ` to an AWS Availability Zone which is valid for the region you specified in the preceding step.  You can obtain a list of valid Availability Zones using the AWS CLI itself.
-    ```
+    ```sh
     $ aws ec2 describe-availability-zones --output text --region us-west-1
     AVAILABILITYZONES	us-west-1	available	us-west-1a
     AVAILABILITYZONES	us-west-1	available	us-west-1c
     ```
-6. Set `SUBNET_PUBLIC_NAME` to a name of your choosing.  I prefer a format of `<subnet address> - <availability zone>`.  For example, if I was creating a subnet with a CIDR block of `10.0.1.0/24` in the `us-west-1a` region, I would name the subnet as `10.0.1.0 - us-west-1a`.
+6. Set `SUBNET_PUBLIC_NAME` to a name of your choosing.  I prefer a format of `<subnet address> - <availability zone>`.  For example, if I was creating a subnet with a CIDR block of `10.0.1.0/24` in the `us-west-1a` Availability Zone, I would name the subnet as `10.0.1.0 - us-west-1a`.
 7. Set `SUBNET_PRIVATE_CIDR` to a valid CIDR block for the VPC CIDR block you specified in the preceding step.  See [VPC and Subnet Sizing](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing) for more information.  EC2 instances deployed into this subnet will NOT be accessible from the Internet, but will have access TO the Internet via a NAT Gateway.
 8. Set `SUBNET_PRIVATE_AZ` to an AWS Availability Zone other than the one you specified for the Public Subnet.  Deploying multiple subnets across two or more Availability Zones is a best practice.  Be sure to specify an Availability Zone which is in the same region you specified in the preceding step.
 9. Set `SUBNET_PRIVATE_NAME` to a name of your choosing.  See the recommended format per the preceding step.
@@ -122,7 +122,7 @@ The variables are predefined with common values which work out of the box.  Feel
 
 Run the script as follows and monitor the status for completion.
 
-```
+```sh
 $ ./aws-cli-create-vpc.sh
 Creating VPC in preferred region...
   VPC ID 'vpc-6c10b108' CREATED in 'us-west-1' region.
